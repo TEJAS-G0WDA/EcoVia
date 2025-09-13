@@ -1,0 +1,125 @@
+:root{
+	--bg: #07130b;
+	--fg: #f0fff6;
+	--muted: #b5d3c0;
+	--neon: #7cf7d4;
+	--neon2: #58d788;
+	--leaf: #92f7b1;
+	--leaf-dark: #3fa35e;
+	--wood: #7b4f27;
+	--glass: rgba(30, 60, 40, 0.35);
+	--border: rgba(146, 247, 177, 0.35);
+	--shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0; color:var(--fg);
+	font-family: "Space Grotesk", Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+	background: radial-gradient(1400px 800px at 10% 0%, rgba(74,170,110,0.18), transparent 42%),
+		radial-gradient(1200px 800px at 90% 10%, rgba(140,230,170,0.14), transparent 48%),
+		var(--bg);
+	overflow-x:hidden;
+	cursor: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2228%22 height=%2228%22 viewBox=%220 0 24 24%22><path fill=%22%237b4f27%22 d=%22M6 2l7 7H9l3 7l-7-7h4z%22/></svg>') 4 2, auto;
+}
+
+.scene{position:relative; min-height:100vh}
+/* Replace neon orbs feel with subtle sun haze */
+.grid{display:none}
+.orb-a{background: radial-gradient(closest-side, rgba(255,255,255,0.2), transparent)}
+.orb-b{background: radial-gradient(closest-side, rgba(255,255,255,0.15), transparent)}
+.orb-c{background: radial-gradient(closest-side, rgba(255,255,255,0.12), transparent)}
+.orb-d{background: radial-gradient(closest-side, rgba(255,255,255,0.1), transparent)}
+@keyframes float{ 50%{ transform: translateY(-16px) } }
+
+.topbar{position:sticky; top:0; display:flex; justify-content:space-between; align-items:center; padding:18px 22px; z-index:5;}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--fg)}
+.logo{font-size:28px; filter: drop-shadow(0 0 12px rgba(146,247,177,0.35))}
+.name{font-family:"Orbitron", sans-serif; font-weight:700; font-size:22px}
+.name .eco{color:#84f3a7} .name .via{color:#58d788}
+
+.btn{display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; border-radius:14px; padding:12px 16px; transition: transform .15s ease, filter .2s ease}
+.btn.primary{background: linear-gradient(135deg, #84f3a7, #58d788); color:#063a1b; border:1px solid rgba(88,215,136,0.6)}
+.btn.secondary{border:1px solid var(--border); color:var(--fg); background: var(--glass); backdrop-filter: blur(10px)}
+.btn.ghost{border:1px solid var(--border); color:var(--fg); background: transparent}
+.btn:hover{transform: translateY(-1px); filter: brightness(1.05)}
+
+.glass{background: var(--glass); border:1px solid var(--border); border-radius:20px; backdrop-filter: blur(20px) saturate(140%); box-shadow: var(--shadow)}
+
+.hero .highlight{background: linear-gradient(90deg, var(--neon), var(--neon2)); -webkit-background-clip: text; background-clip:text; color:transparent; filter: drop-shadow(0 0 12px rgba(46,229,255,0.2))}
+
+.features{display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; padding:40px 22px; max-width:1200px; margin:60px auto}
+.floating-card{position:relative; overflow:hidden; animation: floatCard 10s ease-in-out infinite}
+.floating-card:nth-child(2){animation-delay:2s}
+.floating-card:nth-child(3){animation-delay:4s}
+@keyframes floatCard{50%{ transform: translateY(-6px) }}
+.card{padding:24px; text-align:center}
+.card-icon{font-size:32px; margin-bottom:12px; display:block; animation: pulseIcon 3s ease-in-out infinite}
+@keyframes pulseIcon{50%{ transform: scale(1.1) }}
+.card h3{margin:0 0 12px; font-size:18px}
+.card p{margin:0; color:var(--muted); line-height:1.5}
+
+.foot{padding:30px 22px; text-align:center; color:var(--muted)}
+
+/* Leaves float layer */
+.leaves{position:fixed; inset:0; pointer-events:none; overflow:hidden}
+.leaf{position:absolute; left:-60px; top:0; width:20px; height:20px; animation: leaf-fall 10s linear infinite; opacity:0.9}
+.leaf:nth-child(odd){animation-duration: 12s}
+.leaf:nth-child(3n){animation-delay: 2s}
+.leaf:nth-child(4n){animation-delay: 4s}
+.leaf i{display:block; width:100%; height:100%; background: radial-gradient(closest-side, var(--leaf), var(--leaf-dark)); border-radius: 2px 10px}
+@keyframes leaf-fall{0%{ transform: translateX(0) translateY(-10%) rotate(0)} 50%{ transform: translateX(120vw) translateY(50vh) rotate(140deg)} 100%{ transform: translateX(240vw) translateY(110vh) rotate(320deg)}}
+
+/* Nature scene */
+.nature-scene{position:relative; max-width:1200px; margin:60px auto; height:200px; padding:0 20px}
+.trees{position:absolute; inset:auto 0 0 0; display:flex; justify-content:space-between; padding:0 20px; font-size:32px; filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3))}
+.tree{display:inline-block; transform-origin: 50% 100%; animation: sway 4s ease-in-out infinite; opacity:0.9}
+.tree:nth-child(2n){animation-delay: 1.2s}
+.tree:nth-child(3n){animation-delay: 2.4s}
+@keyframes sway{50%{ transform: rotate(3deg) translateY(-3px) }}
+
+/* Walker (use a simple CSS sprite-like pulse; can be swapped with GIF) */
+.walker{position:absolute; left:10%; bottom:0; width:64px; height:64px; background:
+	radial-gradient(circle at 50% 60%, #ffd6a5 10px, transparent 11px),
+	radial-gradient(circle at 50% 36%, #333 6px, transparent 7px),
+	radial-gradient(circle at 38% 70%, #58d788 8px, transparent 9px),
+	radial-gradient(circle at 62% 70%, #58d788 8px, transparent 9px);
+	animation: walk 1.2s steps(4) infinite, moveX 18s linear infinite;
+	filter: drop-shadow(0 8px 12px rgba(0,0,0,0.35));
+}
+@keyframes walk{to{ background-position: 0 -256px }}
+@keyframes moveX{50%{ transform: translateX(70vw) }}
+
+/* Buttons in nature style */
+.btn{border-radius:14px}
+.btn.primary{background: linear-gradient(135deg, #84f3a7, #58d788); color:#063a1b; border:1px solid rgba(88,215,136,0.6)}
+.btn.secondary{background: rgba(255,255,255,0.12); border:1px solid rgba(146,247,177,0.45)}
+.btn.ghost{border-color: rgba(146,247,177,0.35)}
+.btn:hover{box-shadow: 0 8px 24px rgba(88,215,136,0.25)}
+
+.hero-section{position:relative; margin:60px 0 40px; padding:0 20px}
+.hero-content{max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:2}
+.floating-title{font-size:clamp(32px, 6vw, 64px); line-height:1.1; margin:0 0 20px; animation: floatText 6s ease-in-out infinite}
+.floating-title .eco-text{display:block; margin-top:8px; animation: floatText 6s ease-in-out infinite reverse}
+.floating-subtitle{font-size:clamp(16px, 2.5vw, 18px); color:var(--muted); margin:0; animation: floatText 6s ease-in-out infinite 1s}
+@keyframes floatText{50%{ transform: translateY(-8px) }}
+
+.floating-icons{position:absolute; inset:0; pointer-events:none; z-index:1}
+.float-icon{position:absolute; font-size:clamp(24px, 4vw, 32px); animation: floatIcon 8s ease-in-out infinite}
+.float-icon:nth-child(1){left:15%; top:20%; animation-delay:0s}
+.float-icon:nth-child(2){right:20%; top:15%; animation-delay:1.5s}
+.float-icon:nth-child(3){left:25%; bottom:25%; animation-delay:3s}
+.float-icon:nth-child(4){right:15%; bottom:20%; animation-delay:4.5s}
+.float-icon:nth-child(5){left:50%; top:50%; animation-delay:6s}
+@keyframes floatIcon{50%{ transform: translateY(-12px) rotate(5deg) }}
+
+@media (max-width: 900px){
+	.features{grid-template-columns: 1fr; padding:20px 16px}
+	.hero-section{margin:40px 0 20px; padding:0 16px}
+	.floating-title{font-size: clamp(28px, 8vw, 48px)}
+	.floating-subtitle{font-size: clamp(14px, 4vw, 16px)}
+	.nature-scene{height:160px; margin:40px auto}
+	.trees{font-size:24px}
+	.float-icon{font-size:20px}
+} 

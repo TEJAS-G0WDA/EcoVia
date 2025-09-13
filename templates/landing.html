@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EcoVia – Green Travel, Reimagined</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="/static/css/landing.css" />
+	<link rel="icon" href="static\images\favicon.svg" />
+</head>
+<body>
+	<div class="scene">
+		<!-- animated background orbs -->
+		<div class="orb orb-a"></div>
+		<div class="orb orb-b"></div>
+		<div class="orb orb-c"></div>
+		<div class="orb orb-d"></div>
+		<div class="grid"></div>
+
+		<header class="topbar">
+			<a class="brand" href="/">
+				<div class="logo">🌿</div>
+				<div class="name">
+					<span class="eco">Eco</span><span class="via">Via</span>
+				</div>
+			</a>
+			<a class="btn primary" href="/plan">Start Planning</a>
+		</header>
+
+		<!-- floating leaves animation layer -->
+		<div class="leaves" aria-hidden="true">
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+			<span class="leaf"><i></i></span>
+		</div>
+
+		<main class="hero-section">
+			<div class="hero-content">
+				<h1 class="floating-title">
+					<span class="highlight">Plan Greener Journeys</span>
+					<span class="eco-text">EcoVia!</span>
+				</h1>
+				<p class="floating-subtitle">Walking, cycling, or EV routes—visualized beautifully with real-time charging intel. Sustainable navigation for a cleaner planet.</p>
+				<div style="margin-top:24px">
+					<a class="btn primary" href="/plan">Explore the Planner →</a>
+				</div>
+			</div>
+			<div class="floating-icons">
+				<span class="float-icon">🚶</span>
+				<span class="float-icon">🚴</span>
+				<span class="float-icon">⚡</span>
+				<span class="float-icon">🌱</span>
+				<span class="float-icon">🌍</span>
+			</div>
+		</main>
+
+		<!-- nature scene with trees and walking character -->
+		<section class="nature-scene" aria-label="Nature animation">
+			<div class="trees" aria-hidden="true">
+				<span class="tree">🌳</span>
+				<span class="tree">🌲</span>
+				<span class="tree">🌳</span>
+				<span class="tree">🌲</span>
+				<span class="tree">🌳</span>
+				<span class="tree">🌲</span>
+				<span class="tree">🌳</span>
+				<span class="tree">🌲</span>
+			</div>
+			<div class="walker" role="img" aria-label="Walking person animation"></div>
+		</section>
+
+		<section id="learn" class="features">
+			<div class="card glass floating-card">
+				<div class="card-icon">🚶</div>
+				<h3>Eco Modes</h3>
+				<p>Choose walk, cycle, or EV—optimize distance and emissions.</p>
+			</div>
+			<div class="card glass floating-card">
+				<div class="card-icon">⚡</div>
+				<h3>Live Chargers</h3>
+				<p>See nearby charging stations along your route.</p>
+			</div>
+			<div class="card glass floating-card">
+				<div class="card-icon">✨</div>
+				<h3>Fluent UI</h3>
+				<p>Robotics-inspired motion, glass panels, and neon accents.</p>
+			</div>
+		</section>
+
+		<footer class="foot">
+			<p>© <span id="yr"></span> EcoVia</p>
+			<p>Develeoped with ❤️ by Tejas , Darshan & Koushal</p>
+		</footer>
+	</div>
+
+	<script>
+		document.getElementById('yr').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html> 

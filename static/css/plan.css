@@ -1,0 +1,93 @@
+:root{
+	--grid-c: rgba(255,255,255,0.05);
+	--orb1: #64fbd2;
+	--orb2: #28d7ff;
+}
+
+/* Alternate theme overrides for planner page */
+.planner-theme-alt{
+	--bg: #0c0f1a;
+	--fg: #eaf1ff;
+	--muted: #9fb0d6;
+	--accent: #9b8cff; /* violet */
+	--accent-2: #66e3ff; /* cyan */
+	--glass-bg: rgba(20,25,45,0.75);
+	--glass-border: rgba(155,140,255,0.35);
+}
+
+/* Red/Green map pick icons */
+.pick-pin-start{color:#22c55e; text-shadow: 0 0 10px rgba(34,197,94,0.8); font-size:24px}
+.pick-pin-end{color:#ff3b3b; text-shadow: 0 0 10px rgba(255,59,59,0.8); font-size:24px}
+
+.bg{position:fixed; inset:0; z-index:-1; overflow:hidden}
+.bg .mesh{
+	position:absolute; inset:-50% -50% -50% -50%;
+	background:
+		radial-gradient(1000px 600px at 20% 10%, rgba(155,140,255,0.16), transparent 60%),
+		radial-gradient(900px 600px at 80% 20%, rgba(102,227,255,0.16), transparent 60%),
+		repeating-linear-gradient(0deg, var(--grid-c) 0 1px, transparent 1px 60px),
+		repeating-linear-gradient(90deg, var(--grid-c) 0 1px, transparent 1px 60px);
+	animation: drift 40s linear infinite;
+}
+
+.bg .orb{position:absolute; filter: blur(40px); opacity:0.6}
+.bg .orb-a{width:460px;height:460px;background: radial-gradient(closest-side, var(--orb1), transparent); left:-120px; top:-120px; animation: float 14s ease-in-out infinite}
+.bg .orb-b{width:520px;height:520px;background: radial-gradient(closest-side, var(--orb2), transparent); right:-160px; bottom:-160px; animation: float 16s ease-in-out infinite reverse}
+.bg .orb-c{width:380px;height:380px;background: radial-gradient(closest-side, rgba(100,251,210,0.18), transparent); left:20%; bottom:-140px; animation: float 18s ease-in-out infinite}
+.bg .orb-d{width:420px;height:420px;background: radial-gradient(closest-side, rgba(40,215,255,0.16), transparent); right:15%; top:-120px; animation: float 20s ease-in-out infinite reverse}
+
+@keyframes drift{to{ transform: translate3d(-10%, -5%, 0) rotate(2deg) }}
+@keyframes float{50%{ transform: translateY(-18px) }}
+
+/* Enhance panels and inputs with subtle motions */
+.search-card{animation: riseIn .6s ease both}
+.map-wrap{animation: riseIn .7s .05s ease both}
+@keyframes riseIn{from{opacity:0; transform: translateY(10px)} to{opacity:1; transform:none}}
+
+/* Card styling updates for higher contrast */
+.search-card{
+	padding:18px;
+	background: linear-gradient(180deg, rgba(25,30,55,0.85), rgba(25,30,55,0.7));
+	border:1px solid rgba(155,140,255,0.35);
+	box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+/* Inputs - stronger background and border for readability */
+	.field input, .field select{
+	background: rgba(10,14,30,0.95);
+	border: 1px solid rgba(155,140,255,0.55);
+	color: var(--fg);
+	box-shadow: inset 0 0 0 1px rgba(155,140,255,0.14);
+}
+/* Ensure dropdown menu is readable */
+.field select{ background-color: rgba(10,14,30,0.95); color: var(--fg); }
+.field select option{ background-color: rgba(10,14,30,0.98); color: var(--fg); }
+.field input::placeholder{color: rgba(230,235,255,0.8)}
+.field input:focus, .field select:focus{
+	box-shadow: 0 0 0 3px rgba(155,140,255,0.28), inset 0 0 0 1px var(--accent);
+	border-color: var(--accent);
+	background: rgba(10,14,30,0.98);
+}
+
+/* Icon color tweak */
+.field.with-icon .ico{opacity:0.95; color: var(--accent)}
+
+/* Button gradient updated to new palette */
+.primary{
+	background: linear-gradient(135deg, var(--accent), var(--accent-2));
+	color:#0b1220;
+	border: 1px solid rgba(155,140,255,0.4);
+}
+
+/* Suggestions list matches higher contrast */
+.suggestions .item{
+	background: rgba(20,25,45,0.92);
+	border-color: rgba(155,140,255,0.35);
+}
+.suggestions .item button:hover{background: rgba(155,140,255,0.12)}
+
+/* Leaflet tweaks for glowing route */
+.leaflet-pane .leaflet-interactive{filter: drop-shadow(0 0 6px rgba(155,140,255,0.5))}
+
+/* EV marker style */
+.ev-pin{font-size:20px; text-shadow: 0 0 12px rgba(155,140,255,0.85)} 
