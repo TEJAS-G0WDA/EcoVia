@@ -3,7 +3,10 @@
 EcoVia is a modern **Flask-based web application** that promotes **sustainable travel** by offering eco-friendly route planning with **real-time charging station information** and **CO₂ emissions tracking**.  
 Built with a **nature-inspired UI**, EcoVia combines environmental awareness with modern web technology.  
 
-![EcoVia Demo](static/images/favicon.svg)
+---
+## 📸 Screenshots
+
+🌱 ![EcoVia Demo](static/images/favicon.svg)
 
 ---
 
@@ -79,12 +82,14 @@ flask run
 
 5.**Open in browser:** `http://127.0.0.1:5000`
 
+---
+
 ## 📸 Screenshots
 
 🌱 ![EcoVia Demo](static/images/favicon.svg)
 
 
-
+---
 
 ## 📂 Project Structure  
 ```
