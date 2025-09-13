@@ -6,7 +6,8 @@ Built with a **nature-inspired UI**, EcoVia combines environmental awareness wit
 ---
 ## 📸 Screenshots
 
-🌱 ![EcoVia Demo](static/images/favicon.svg)
+🌱 ![EcoVia Demo](static/images/ss1.png)
+![EcoVia Demo](static/images/ss2.png)
 
 ---
 
