@@ -53,7 +53,6 @@ Built with a **nature-inspired UI**, EcoVia combines environmental awareness wit
 - python-dotenv, requests  
 
 ---
----
 
 ## 🔑 Environment Variables  
 
@@ -69,6 +68,8 @@ OCM_API_KEY=your_openchargemap_api_key_here
 ---
 ## 🚀 Getting Started  
 ### Installation
+
+```
 
 1. **Clone the Repository**  
    ```bash
