@@ -53,8 +53,20 @@ Built with a **nature-inspired UI**, EcoVia combines environmental awareness wit
 - python-dotenv, requests  
 
 ---
+---
 
+## 🔑 Environment Variables  
 
+EcoVia uses external APIs that require secure keys.  
+Create a `.env` file in the project root and add the following variables:  
+
+```ini
+# OpenRouteService API Key
+ORS_API_KEY=your_openrouteservice_api_key_here
+
+# OpenChargeMap API Key (optional, can be left blank if not available)
+OCM_API_KEY=your_openchargemap_api_key_here
+---
 ## 🚀 Getting Started  
 ### Installation
 
