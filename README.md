@@ -52,8 +52,6 @@ Built with a **nature-inspired UI**, EcoVia combines environmental awareness wit
 ---
 
 
----
-
 ## 🚀 Getting Started  
 ### Installation
 
